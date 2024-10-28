@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="fotos/milica.png" />
+    <title>Persönliches Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/7f9e637512.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="header">
+    <div class="container">
+        <img src="fotos/milica.png" class="logo">
+        <div class="header-text">
+            <p>Frontend Entwicklerin</p>
+            <h1>Hi, ich bin <span>Milica</span><br>aus <span>Bosnien und Herzegowina</span></h1>
+        </div>
+    <nav>
+            <ul id="sidemenu">
+                <li><a href="#header"onclick="closemenu()">Home</a></li>
+                <li><a href="#about" onclick="closemenu()">About</a></li>
+                <li><a href="#portfolio" onclick="closemenu()">Portfolio</a></li>
+                <li><a href="#contact"  onclick="closemenu()">Contact</a></li>
+                <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars"onclick="openmenu()"></i>
+        </nav>
+    </div>
+</div>
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="fotos/nala11.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About me</h1>
+                <p class="info">Ich heiße Milica Vujic und komme aus dem wunderschönen Banja Luka, Bosnien und Herzegowina. Ich habe die Elektrotechnische Schule in Banja Luka mit dem Schwerpunkt Computertechnik abgeschlossen und danach das Elektrotechnik-Studium begonnen. Allerdings habe ich mich nach dem ersten Semester entschieden, einen mutigen Schritt zu machen und ins Ausland zu ziehen. Ich plante nach Deutschland zu gehen, aber landete schließlich in Graz, Österreich.
+
+                    Im Jahr 2021 habe ich die HTL Bulme mit dem Schwerpunkt Elektronik und Technische Informatik begonnen und 2024 meine Ausbildung abgeschlossen. Während meiner Ausbildung habe ich vielfältige Kenntnisse in den Bereichen Hardware und Software erworben, jedoch hat mich die Welt der Software, insbesondere das Webdesign, am meisten fasziniert. Heute möchte ich mich in diesem Bereich weiterentwickeln und strebe danach, meine Karriere als Frontend-Entwicklerin fortzusetzen.
+                    </p>
+            <div class="tab-title">
+            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+            <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+           <div class="tab-contents active-tab" id="skills">
+            <ul>
+                <li><span>C++, C#</span><br></li>
+                <li><span>Python</span><br></li>
+                <li><span>HTML, CSS</span><br></li>
+                <li><span>JavaScript</span><br></li>
+            </ul>
+           </div>
+           <div class="tab-contents" id="experience">
+            <ul>
+                <li><span>05/2018 - 09/2018</span><br>Kellnerin/Servicekraft -  Restaurant La Primavera, Hooksiel, Deutschland</li>
+                <li><span>11/2018 - 08/2024</span><br>Servicekraft - Bellys, Graz, Österreich</li>
+            </ul>
+           </div>
+           <div class="tab-contents" id="education">
+            <ul>
+                <li><span>2013 - 2017</span><br><span>Elektrotechnische Schule Nikola Tesla</span>,
+                    Banja Luka, Bosnien und Herzegowina<br>mit Schwerpunkt in <span>Computertechnik</span></li>
+                <li><span>2021 - 2024</span><br><span>HTL Bulme, Abendkolleg</span>, Graz<br>mit Schwerpunkt in <span>Elektronik und Technische Informatik</span></li>
+            </ul>
+           </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="portfolio">
+    <div class="container1">
+    <h1 class="sub-title">In Bearbeitung</h1>
+    <p id="work">
+        Wenn Sie Ideen haben oder mir in diesem Prozess helfen möchten, zögern Sie nicht, mich zu kontaktieren!
+        Jede Hilfe und Zusammenarbeit sind willkommen, und ich freue mich auf die Möglichkeit, gemeinsam etwas Besonderes zu schaffen!</p>
+    </div>
+</div>
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> milicavujic0704@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> +43 0676 4931940</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/mil.vu/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/milica-vujic-790753248/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+
+                </div>
+                <a href="fotos/MilicaVujic CV.pdf" target="_blank" class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+
+var tablinks=document.getElementsByClassName("tab-links");
+var tabcontents=document.getElementsByClassName("tab-contents");
+
+function opentab(tabname){
+    for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+    }
+    for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+}
+</script>
+<script>
+    var sidemeu= document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemeu.style.right="0";
+    }
+    function closemenu(){
+        sidemeu.style.right="-140px";
+    }
+</script>
+
+<script>
+    const scriptURL ='https://script.google.com/macros/s/AKfycbyL3vCAB7V19-lAs27jCgNulCMuLEmWnzuLl2uq22rgxXgDoOwbSafDm8UREfO0cmXW7g/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg=document.getElementById("msg")
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => { msg.innerHTML="Message sent successfully"
+    setTimeout(function(){
+        msg.innerHTML=""
+    },5000)
+    form.reset()
+})
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+  </body>
+</html>
